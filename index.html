@@ -203,13 +203,48 @@ html{scroll-behavior:smooth}
     <span><i class="sw c1"></i> istilah baru</span>
     <span><i class="sw c2"></i> jebakan soal</span>
   </div>
-  <a class="pdf-link" href="Pegangan_MTCNA.pdf" download style="display:inline-block;justify-self:start;font-weight:600;padding:8px 14px;border:1.5px solid var(--accent);border-radius:8px;text-decoration:none">⬇ Unduh versi PDF (offline)</a> <a class="pdf-link" href="Silabus_MTCNA_Penjelasan.pdf" download style="display:inline-block;justify-self:start;font-weight:600;padding:8px 14px;border:1.5px solid var(--accent);border-radius:8px;text-decoration:none">⬇ PDF silabus resmi + penjelasan per poin</a>
+  <style>
+.pdf-panel{display:grid;gap:10px;background:var(--paper);border:1.5px solid var(--accent);border-radius:12px;padding:14px}
+.pdf-panel h2{font-size:1.05rem}
+.pdf-panel .items{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pdf-panel .items>div{min-width:0;border:1px solid var(--line);border-radius:9px;padding:10px 12px;display:grid;gap:8px;align-content:start}
+.pdf-panel b{font-family:var(--f-display)}
+.pdf-panel small{color:var(--muted);font-size:.82rem;line-height:1.4}
+.pdf-panel .btns{display:flex;flex-wrap:wrap;gap:6px}
+.pdf-panel a{font-size:.88rem;font-weight:600;text-decoration:none;padding:7px 12px;border-radius:7px;border:1.5px solid var(--accent);color:var(--accent)}
+.pdf-panel a.open{background:var(--accent);color:var(--paper)}
+@media (max-width:560px){.pdf-panel .items{grid-template-columns:1fr}}
+@media print{.pdf-panel{display:none!important}}
+</style>
+<div class="pdf-panel" id="materi-pdf">
+  <h2>Materi PDF</h2>
+  <div class="items">
+    <div>
+      <b>Pegangan Belajar MTCNA</b>
+      <small>Isi halaman ini dalam bentuk PDF A5, lengkap dengan kunci jawaban kuis.</small>
+      <div class="btns">
+        <a class="open" href="Pegangan_MTCNA.pdf" target="_blank" rel="noopener">Buka PDF</a>
+        <a href="Pegangan_MTCNA.pdf" download>Unduh</a>
+      </div>
+    </div>
+    <div>
+      <b>Silabus MTCNA + Penjelasan</b>
+      <small>138 poin persis seperti silabus resmi, penjelasan dan ilustrasi di bawah tiap poin.</small>
+      <div class="btns">
+        <a class="open" href="Silabus_MTCNA_Penjelasan.pdf" target="_blank" rel="noopener">Buka PDF</a>
+        <a href="Silabus_MTCNA_Penjelasan.pdf" download>Unduh</a>
+        <a href="silabus.html">Versi web</a>
+      </div>
+    </div>
+  </div>
+</div>
+
   <p class="note">Format ujian di atas adalah ketentuan umum MikroTik (ujian online, bahasa Inggris, lewat akun mikrotik.com). Pastikan detailnya ke trainer di hari pertama. Karena soal berbahasa Inggris, istilah teknis di sini sengaja tetap ditulis dalam bahasa Inggris.</p>
 </header>
 
 <nav class="chips" aria-label="Lompat ke modul">
   <div class="row" id="chips">
-    <a href="#dasar">0 · Dasar</a><a href="#m1">1 · Intro</a><a href="#m2">2 · DHCP</a><a href="#m3">3 · Bridge</a><a href="#m4">4 · Routing</a><a href="#m5">5 · Wireless</a><a href="#m6">6 · Firewall</a><a href="#m7">7 · QoS</a><a href="#m8">8 · Tunnel</a><a href="#m9">9 · Tools</a><a href="#kuis">Kuis</a><a href="#contekan">Contekan</a>
+    <a href="#dasar">0 · Dasar</a><a href="#m1">1 · Intro</a><a href="#m2">2 · DHCP</a><a href="#m3">3 · Bridge</a><a href="#m4">4 · Routing</a><a href="#m5">5 · Wireless</a><a href="#m6">6 · Firewall</a><a href="#m7">7 · QoS</a><a href="#m8">8 · Tunnel</a><a href="#m9">9 · Tools</a><a href="#materi-pdf">PDF</a><a href="#kuis">Kuis</a><a href="#contekan">Contekan</a>
   </div>
   <div class="progress" aria-hidden="true"><i id="bar"></i></div>
 </nav>
