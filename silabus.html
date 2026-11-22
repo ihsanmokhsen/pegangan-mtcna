@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Silabus MTCNA + Penjelasan</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Mengikuti urutan & teks persis "MTCNA Training outline" (MikroTik, 22 Jan 2016). Teks Inggris tebal = poin asli silabus; kotak di bawahnya = penjelasan. */
+:root{--ink:#14232e;--muted:#55697a;--line:#cfd9e0;--head:#e9eef2;--accent:#0b6e8a;--ex:#f4f8fa;--hl:#ffe36e;--hl-ink:#2b2000;--star:#c0392b;--code:#eef3f6}
+@page{size:A5;margin:11mm 10mm 12mm}
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{margin:0;background:#fff;color:var(--ink)}
+body{font-family:Inter,Arial,Helvetica,sans-serif;font-size:10pt;line-height:1.5;padding:16px;max-width:760px;margin:0 auto}
+@media print{body{padding:0;max-width:none}}
+h1{font-size:17pt;margin:0 0 2px;line-height:1.2}
+.sub{color:var(--muted);font-size:9pt;margin:0 0 12px}
+.edited{text-align:right;color:var(--muted);font-size:8pt;margin-bottom:10px}
+code,.mono{font-family:"JetBrains Mono",Menlo,Consolas,monospace;font-size:.86em}
+code{background:var(--code);padding:0 4px;border-radius:3px}
+pre{font-family:"JetBrains Mono",Menlo,monospace;font-size:7.8pt;background:var(--code);border:1px solid var(--line);border-radius:5px;padding:6px 8px;margin:5px 0 0;white-space:pre-wrap;word-break:break-word;line-height:1.45}
+mark{background:var(--hl);color:var(--hl-ink);padding:0 2px;border-radius:2px;font-weight:600;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+
+table.info{width:100%;border-collapse:collapse;font-size:8.4pt;line-height:1.4}
+table.info td{vertical-align:top;padding:3px 5px;border-bottom:1px solid var(--line)}
+table.info td:first-child{font-weight:700;width:27%}
+table.info .id{display:block;color:var(--accent);margin-top:2px;font-size:8.1pt}
+
+.legend{border:1px solid var(--line);border-radius:6px;padding:7px 9px;font-size:8.6pt;margin:12px 0;display:grid;gap:3px}
+.legend b{font-weight:700}
+
+.module{break-before:page}
+.mhead{display:grid;grid-template-columns:30% 1fr;border:1px solid var(--ink);margin-bottom:8px}
+.mhead div{padding:6px 8px}
+.mhead .l{background:var(--head);border-right:1px solid var(--ink);font-weight:700;line-height:1.25}
+.mhead .l small{display:block;font-weight:600;font-size:10.5pt}
+.mhead .r{font-weight:700;font-size:8.5pt;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);align-self:center}
+.mintro{font-size:9pt;color:var(--muted);margin:0 0 8px}
+
+ul.o{list-style:none;margin:0;padding:0}
+ul.o>li{margin:0 0 9px}
+ul.o ul{list-style:none;margin:6px 0 0 14px;padding:0;border-left:1px dashed var(--line)}
+ul.o ul>li{margin:0 0 7px;padding-left:10px}
+.k{font-weight:700;display:flex;gap:6px;break-after:avoid}
+.k::before{content:"•";color:var(--ink)}
+ul.o ul .k{font-weight:600}
+ul.o ul .k::before{content:"•";color:var(--muted)}
+.ex{background:var(--ex);border-left:3px solid var(--accent);padding:5px 8px;margin-top:3px;font-size:9pt;break-inside:avoid}
+.ex p{margin:0} .ex p+p{margin-top:4px}
+.ex .term{display:block;font-size:8.6pt;color:var(--accent);margin-bottom:2px}
+.ex .term b{font-weight:700}
+.star{font-size:7pt;font-weight:700;color:var(--star);border:1px solid var(--star);border-radius:3px;padding:0 4px;letter-spacing:.04em;align-self:center}
+.lab .ex{border-left-color:var(--muted)}
+.foot{margin-top:14px;font-size:8pt;color:var(--muted);border-top:1px solid var(--line);padding-top:6px}
+</style>
+</head>
+<body>
+
+<div class="edited">Last edited on January 22, 2016</div>
+<h1>Certified Network Associate (MTCNA)</h1>
+<p class="sub">Training outline · disertai penjelasan Bahasa Indonesia di bawah setiap poin</p>
+
+<table class="info">
+<tr><td>Duration:</td><td>3 days<span class="id">3 hari pelatihan; ujian online biasanya di akhir hari ke-3.</span></td></tr>
+<tr><td>Outcomes:</td><td>By the end of this training session, the student will be familiar with RouterOS software and RouterBOARD products and be able to connect the client to the Internet. He will also be able to configure, manage, do basic troubleshooting of a MikroTik router and provide basic services to clients.<span class="id">Setelah pelatihan, peserta mengenal RouterOS & RouterBOARD, bisa menyambungkan client ke internet, mengonfigurasi, mengelola, melakukan troubleshooting dasar, dan menyediakan layanan dasar (DHCP, Wi-Fi, bandwidth, VPN) bagi client.</span></td></tr>
+<tr><td>Target audience:</td><td>Network engineers and technicians wanting to deploy and support:<br>• Corporate networks<br>• Client CPEs (WISPs and ISPs)<span class="id">Teknisi/engineer yang mengelola jaringan kantor, atau perangkat pelanggan (CPE = Customer Premises Equipment, alat di lokasi pelanggan) milik penyedia internet nirkabel (WISP) dan ISP.</span></td></tr>
+<tr><td>Course prerequisites:</td><td>The student must have a good understanding of TCP/IP and subnetting.<span class="id">Wajib paham IP address, subnet mask/prefix, gateway, dan cara menghitung subnet. Lihat bagian "Fondasi" di Pegangan Belajar MTCNA.</span></td></tr>
+<tr><td>Suggested reading:</td><td>Search for "ipv4 tutorial"<br>Test yourself with the 'example test' on https://www.mikrotik.com/client/trainingSessions<span class="id">Ada contoh soal resmi di akun mikrotik.com. Coba kerjakan sebelum ujian.</span></td></tr>
+</table>
+
+<div class="legend">
+<span><b>Teks tebal berbahasa Inggris</b> = poin asli silabus, urutan dan kata-katanya persis.</span>
+<span><b>Kotak biru di bawahnya</b> = penjelasan. "Istilah:" menjelaskan kata baru lebih dulu.</span>
+<span><mark>Stabilo kuning</mark> = paling sering keluar di ujian. <span class="star">★ WAJIB</span> = wajib hafal.</span>
+</div>
+
+<!-- =============================== MODULE 1 =============================== -->
+<section class="module">
+<div class="mhead"><div class="l">Module 1<small>Introduction</small></div><div class="r">Objective</div></div>
+<ul class="o">
+
+<li><div class="k">About MikroTik</div>
+<div class="ex"><p>MikroTik adalah perusahaan asal <b>Latvia</b> (berdiri 1996) yang membuat perangkat lunak dan perangkat keras jaringan: router, switch, dan perangkat wireless. Produknya populer di ISP, WISP, dan kantor karena murah tetapi fiturnya lengkap.</p></div>
+<ul>
+<li><div class="k">What is RouterOS</div>
+<div class="ex"><span class="term">Istilah: <b>Sistem operasi</b> = software utama yang menjalankan perangkat (seperti Windows di laptop).</span><p>RouterOS adalah <mark>sistem operasi (software)</mark> buatan MikroTik, berbasis Linux. Fiturnya: routing, firewall, NAT, DHCP, bridge, wireless, VPN, hotspot, queue/bandwidth, dan monitoring. Bisa berjalan di RouterBOARD, PC biasa (x86), maupun mesin virtual (CHR = Cloud Hosted Router).</p></div></li>
+<li><div class="k">What is RouterBOARD</div>
+<div class="ex"><p>RouterBOARD (RB) adalah <mark>perangkat keras (hardware)</mark> buatan MikroTik yang sudah terpasang RouterOS beserta lisensinya. Contoh: hEX, hAP, RB750, CCR, CRS. Ringkasnya: <b>RouterOS = software, RouterBOARD = hardware.</b></p></div></li>
+</ul></li>
+
+<li><div class="k">First time accessing the router <span class="star">★ WAJIB</span></div>
+<div class="ex"><p>Cara masuk pertama kali ke router baru. Default yang umum: <mark>IP <code>192.168.88.1</code>, user <code>admin</code></mark>. Perangkat lama tanpa password; perangkat baru memakai password yang tertera di stiker.</p></div>
+<ul>
+<li><div class="k">WinBox and MAC-WinBox</div>
+<div class="ex"><span class="term">Istilah: <b>GUI</b> = tampilan berupa jendela & tombol; <b>MAC address</b> = alamat fisik kartu jaringan.</span><p>WinBox adalah aplikasi GUI resmi untuk mengatur router (port TCP <code>8291</code>). Bisa terhubung lewat IP, atau lewat <mark>MAC address (MAC-WinBox)</mark>. MAC-WinBox bekerja di Layer 2 sehingga tetap bisa masuk walau router belum punya IP atau IP-nya salah, asal laptop terhubung di segmen jaringan yang sama. Tab "Neighbors" di WinBox menampilkan router MikroTik di sekitar.</p></div></li>
+<li><div class="k">WebFig and Quick Set</div>
+<div class="ex"><p><b>WebFig</b> = pengaturan router lewat browser (ketik IP router, port 80/443). <b>Quick Set</b> = halaman wizard sederhana untuk skenario umum (Home AP, CPE, PTP Bridge, dll.): cukup isi IP WAN/LAN, Wi-Fi, dan password, router langsung jalan.</p></div></li>
+<li><div class="k">Default configuration</div>
+<div class="ex"><p>Konfigurasi bawaan pabrik yang berbeda per model. Umumnya pada router rumahan: ether1 = WAN (DHCP client), port lain digabung dalam bridge sebagai LAN dengan IP <code>192.168.88.1/24</code>, DHCP server aktif, NAT masquerade, dan firewall dasar. Saat login pertama, WinBox bisa menawarkan untuk menghapusnya ("Remove Configuration"). Lihat isinya: <code>/system default-configuration print</code>.</p></div></li>
+</ul></li>
+
+<li><div class="k">RouterOS command line interface (CLI)</div>
+<div class="ex"><span class="term">Istilah: <b>CLI</b> = mengatur router dengan mengetik perintah, bukan klik.</span><p>Semua yang bisa dilakukan di WinBox juga bisa lewat CLI. CLI lebih cepat untuk banyak perintah sekaligus dan dipakai untuk script.</p></div>
+<ul>
+<li><div class="k">Null Modem cable</div>
+<div class="ex"><p>Kabel serial (RS-232) yang menyilangkan jalur kirim-terima, untuk akses <b>console</b> langsung ke router yang punya port serial (mis. CCR, RB1100). Berguna saat semua akses jaringan gagal. Setting umum: 115200 bps, 8N1.</p></div></li>
+<li><div class="k">SSH and Telnet</div>
+<div class="ex"><p>Akses CLI jarak jauh lewat jaringan. <mark>SSH (port 22) terenkripsi</mark>, aman. <mark>Telnet (port 23) tidak terenkripsi</mark>, password bisa disadap; sebaiknya dimatikan. Dari laptop: <code>ssh admin@192.168.88.1</code>.</p></div></li>
+<li><div class="k">New terminal in WinBox/WebFig</div>
+<div class="ex"><p>Tombol <b>New Terminal</b> di menu kiri WinBox/WebFig membuka jendela CLI tanpa perlu aplikasi SSH.</p></div></li>
+</ul></li>
+
+<li><div class="k">RouterOS CLI principles</div>
+<div class="ex"><p>Menu CLI tersusun bertingkat seperti folder, sama dengan susunan menu di WinBox. Contoh: <code>/ip address</code> = menu IP › Addresses.</p></div>
+<ul>
+<li><div class="k">&lt;tab&gt;, double &lt;tab&gt;, "?", navigation</div>
+<div class="ex"><p><mark><code>Tab</code> = melengkapi perintah</mark>; <mark><code>Tab Tab</code> = menampilkan semua pilihan</mark>; <code>?</code> = bantuan/penjelasan perintah. Navigasi: <code>/</code> = ke menu paling atas, <code>..</code> = naik satu tingkat, ketik nama menu untuk masuk. Perintah umum: <code>print</code>, <code>add</code>, <code>set</code>, <code>remove</code>, <code>enable</code>, <code>disable</code>. Ctrl+X = <b>Safe Mode</b>.</p></div></li>
+<li><div class="k">Command history and its benefits</div>
+<div class="ex"><p>Tombol panah atas/bawah memanggil perintah yang pernah diketik, sehingga tidak perlu mengetik ulang dan mengurangi salah ketik. Riwayat perubahan konfigurasi juga bisa dilihat dan dibatalkan dengan <code>/system history print</code> dan <code>/undo</code>.</p></div></li>
+</ul></li>
+
+<li><div class="k">Initial configuration (Internet access) <span class="star">★ WAJIB</span></div>
+<div class="ex"><p>Tiga langkah agar PC di LAN bisa internet: WAN dapat IP, LAN punya gateway, dan NAT. PC juga butuh IP (dari DHCP server atau manual) dan DNS.</p>
+<pre>/ip dhcp-client add interface=ether1 disabled=no
+/ip address add address=192.168.10.1/24 interface=ether2
+/ip firewall nat add chain=srcnat out-interface=ether1 action=masquerade
+/ip dns set servers=8.8.8.8 allow-remote-requests=yes</pre></div>
+<ul>
+<li><div class="k">WAN DHCP-client</div>
+<div class="ex"><span class="term">Istilah: <b>WAN</b> = sisi yang menghadap ISP/internet; <b>DHCP client</b> = meminta IP otomatis.</span><p>Interface WAN (biasanya ether1) meminta IP, gateway, dan DNS otomatis dari modem/ISP. Opsi <code>add-default-route=yes</code> membuat default route otomatis (muncul sebagai rute dinamis). Jika ISP memakai PPPoE atau IP statis, caranya berbeda.</p></div></li>
+<li><div class="k">LAN IP address and default gateway</div>
+<div class="ex"><span class="term">Istilah: <b>Default gateway</b> = pintu keluar menuju jaringan lain.</span><p>Pasang IP di interface LAN, contoh <code>192.168.10.1/24</code>. IP ini menjadi <mark>default gateway bagi PC</mark>. Router sendiri juga butuh default gateway ke ISP (rute <code>0.0.0.0/0</code>), yang biasanya didapat dari DHCP client.</p></div></li>
+<li><div class="k">Basic Firewall - NAT masquerade</div>
+<div class="ex"><span class="term">Istilah: <b>NAT</b> = Network Address Translation, menerjemahkan alamat IP.</span><p>IP privat (192.168.x.x) tidak bisa dipakai di internet. <mark>Masquerade mengganti IP pengirim dari PC dengan IP WAN router</mark> saat paket keluar, sehingga banyak PC berbagi satu IP publik. Rule: <code>chain=srcnat out-interface=ether1 action=masquerade</code>.</p></div></li>
+</ul></li>
+
+<li><div class="k">Upgrading RouterOS</div>
+<div class="ex"><p>Upgrade memperbaiki bug, menutup celah keamanan, dan menambah fitur. Sebelum upgrade: buat backup, baca changelog. Cek versi: <code>/system resource print</code>.</p></div>
+<ul>
+<li><div class="k">Package types</div>
+<div class="ex"><span class="term">Istilah: <b>Package (.npk)</b> = file paket instalasi RouterOS; <b>arsitektur</b> = jenis prosesor (arm, arm64, mipsbe, mmips, smips, tile, x86).</span><p>Ada <b>main package</b> (<code>routeros-&lt;arsitektur&gt;-&lt;versi&gt;.npk</code>) berisi fitur inti, dan <b>extra packages</b> untuk fitur tambahan (mis. wireless, user-manager, ntp, iot). File paket harus <mark>sesuai arsitektur prosesor</mark> router. Lihat paket terpasang: <code>/system package print</code>.</p></div></li>
+<li><div class="k">Ways of upgrading</div>
+<div class="ex"><p>(1) <b>System › Packages › Check For Updates</b>: pilih channel (long-term, stable, testing, development) lalu Download &amp; Install. (2) <b>Upload file .npk</b> ke menu Files (drag-drop di WinBox atau FTP), lalu reboot. (3) <b>Netinstall</b>. (4) Otomatis dari <b>The Dude</b> untuk banyak router. Downgrade: upload versi lama lalu <code>/system package downgrade</code>.</p></div></li>
+<li><div class="k">RouterBOOT firmware upgrade</div>
+<div class="ex"><span class="term">Istilah: <b>RouterBOOT</b> = firmware/bootloader (seperti BIOS) yang menyalakan perangkat sebelum RouterOS jalan.</span><p><mark>Upgrade RouterOS tidak otomatis meng-upgrade RouterBOOT.</mark> Setelah upgrade RouterOS, cek <code>/system routerboard print</code> (current vs upgrade firmware), jalankan <code>/system routerboard upgrade</code>, lalu <b>reboot</b>.</p></div></li>
+</ul></li>
+
+<li><div class="k">Router identity</div>
+<div class="ex"><p>Nama router, tampil di prompt CLI, judul WinBox, dan daftar Neighbors. Memudahkan membedakan banyak router. <code>/system identity set name=RTR-KANTOR</code>.</p></div></li>
+
+<li><div class="k">Manage RouterOS logins</div>
+<div class="ex"><p>Mengatur akun di <code>/user</code>. Grup bawaan: <mark><code>full</code> (semua hak), <code>write</code> (ubah config, tanpa kelola user), <code>read</code> (hanya lihat)</mark>. Bisa buat grup sendiri dengan policy tertentu, dan batasi login dari IP tertentu (<code>address</code>/allowed-address). Ganti/hapus akun admin bawaan dan pakai password kuat. Lihat user yang sedang login: <code>/user active print</code>.</p>
+<pre>/user add name=operator group=read password=PasswordKuat123</pre></div></li>
+
+<li><div class="k">Manage RouterOS services</div>
+<div class="ex"><p>Layanan akses ke router ada di <code>/ip service</code>: telnet (23), ftp (21), www (80), ssh (22), www-ssl (443), api (8728), api-ssl (8729), <mark>winbox (8291)</mark>. Matikan yang tidak dipakai, ubah port bila perlu, dan isi <b>available from</b> agar hanya IP admin yang bisa akses.</p>
+<pre>/ip service disable telnet,ftp,www,api
+/ip service set winbox address=192.168.10.0/24</pre></div></li>
+
+<li><div class="k">Managing configuration backups <span class="star">★ WAJIB</span></div>
+<div class="ex"><p>Simpan konfigurasi sebelum perubahan besar. Simpan juga salinannya di luar router (unduh dari menu Files), karena file di router hilang jika di-Netinstall.</p></div>
+<ul>
+<li><div class="k">Saving and restoring the backup</div>
+<div class="ex"><p>Simpan: <code>/system backup save name=kantor</code> → file <code>kantor.backup</code>. Pulihkan: <code>/system backup load name=kantor.backup</code> lalu router reboot. Backup bisa diberi password/enkripsi.</p></div></li>
+<li><div class="k">Difference between a backup and an export (.rsc) file</div>
+<div class="ex"><p><mark><b>Backup (.backup)</b> = file biner, tidak bisa dibaca</mark>, memuat seluruh config termasuk user &amp; password, ditujukan untuk dipulihkan ke <b>router yang sama</b> (atau model yang sama). <mark><b>Export (.rsc)</b> = file teks berisi perintah CLI</mark>, bisa dibaca dan diedit, bisa dipakai sebagian atau ke router lain; tidak memuat password user. Buat: <code>/export file=kantor</code>. Pulihkan: <code>/import file-name=kantor.rsc</code>.</p></div></li>
+<li><div class="k">Editing an export file</div>
+<div class="ex"><p>Karena berupa teks, file .rsc bisa dibuka dengan Notepad/TextEdit: ubah IP, nama interface, atau hapus bagian yang tidak perlu, lalu upload dan <code>/import</code>. Bisa juga copy-paste isinya ke Terminal. Cocok untuk membuat template konfigurasi.</p></div></li>
+</ul></li>
+
+<li><div class="k">Resetting a RouterOS device</div>
+<div class="ex"><p>Mengembalikan konfigurasi ke default atau kosong. Lewat CLI: <code>/system reset-configuration</code> (opsi: <code>no-defaults=yes</code> = benar-benar kosong, <code>keep-users=yes</code>, <code>skip-backup=yes</code>). Lewat tombol fisik: tahan tombol <b>reset</b> saat menyalakan router hingga LED berkedip, lalu lepas. <mark>Reset hanya menghapus konfigurasi, bukan instal ulang RouterOS.</mark></p></div></li>
+
+<li><div class="k">Reinstalling a RouterOS device (Netinstall)</div>
+<div class="ex"><span class="term">Istilah: <b>Netinstall</b> = program dari MikroTik (Windows, ada versi CLI Linux) untuk memasang ulang RouterOS lewat kabel jaringan.</span><p>Dipakai saat router rusak sistemnya, lupa password, atau mau mulai benar-benar bersih. Langkah: PC diberi IP statis, jalankan Netinstall, router di-boot dari jaringan (tahan tombol reset ±15 detik sampai muncul di Netinstall, atau set boot-device <code>try-ethernet-once-then-nand</code>), pilih file .npk, klik Install. <mark>Semua konfigurasi terhapus, tetapi lisensi tetap.</mark></p></div></li>
+
+<li><div class="k">RouterOS license levels <span class="star">★ WAJIB</span></div>
+<div class="ex"><p>Level lisensi menentukan fitur/kapasitas. RouterBOARD sudah membawa lisensi sesuai modelnya dan lisensi tidak bisa dipindah ke perangkat lain.</p>
+<p><b>Level 0</b> trial 24 jam (x86) · <b>Level 1</b> demo gratis, fitur sangat terbatas · <mark><b>Level 3</b> = CPE, wireless hanya sebagai station (tidak bisa AP)</mark> · <mark><b>Level 4</b> = bisa jadi wireless Access Point (WISP)</mark> · <b>Level 5</b> seperti 4 dengan kapasitas tunnel/hotspot lebih besar · <b>Level 6</b> controller, tanpa batas. CHR (virtual) memakai skema lain: free, p1, p10, p-unlimited. Cek: <code>/system license print</code>.</p></div></li>
+
+<li><div class="k">Sources of additional information</div>
+<div class="ex"><p>Tempat mencari bantuan dan dokumentasi resmi.</p></div>
+<ul>
+<li><div class="k">wiki.mikrotik.com</div>
+<div class="ex"><p>Dokumentasi resmi lama (manual & contoh konfigurasi). Kini digantikan oleh <b>help.mikrotik.com/docs</b>.</p></div></li>
+<li><div class="k">forum.mikrotik.com</div>
+<div class="ex"><p>Forum komunitas resmi: tanya jawab sesama pengguna, pengumuman versi baru, dan diskusi bug.</p></div></li>
+<li><div class="k">mum.mikrotik.com</div>
+<div class="ex"><p>MUM = <b>MikroTik User Meeting</b>, konferensi rutin di berbagai negara. Situsnya menyimpan slide &amp; video presentasi studi kasus.</p></div></li>
+<li><div class="k">Distributor and consultant support</div>
+<div class="ex"><p>Distributor resmi dan konsultan bersertifikat (lihat mikrotik.com › Buy / Consultants) bisa membantu desain, konfigurasi, dan garansi perangkat.</p></div></li>
+<li><div class="k">support@mikrotik.com</div>
+<div class="ex"><p>Email dukungan teknis resmi. Lampirkan file <b>supout.rif</b>, penjelasan masalah, dan diagram jaringan (dibahas di Module 9).</p></div></li>
+</ul></li>
+
+<li class="lab"><div class="k">Module 1 laboratory</div>
+<div class="ex"><p>Praktik: login via WinBox/MAC-WinBox, menghapus default config, setting internet (DHCP client, IP LAN, NAT, DNS), mengganti identity, membuat user, mematikan service, upgrade RouterOS &amp; RouterBOOT, membuat backup &amp; export, serta reset.</p></div></li>
+</ul>
+</section>
+
+<!-- =============================== MODULE 2 =============================== -->
+<section class="module">
+<div class="mhead"><div class="l">Module 2<small>DHCP</small></div><div class="r">Objective</div></div>
+<ul class="o">
+<li><div class="k">DHCP server and client <span class="star">★ WAJIB</span></div>
+<div class="ex"><span class="term">Istilah: <b>DHCP</b> = Dynamic Host Configuration Protocol, pembagi IP otomatis (port UDP 67/68).</span><p>DHCP memberikan IP, subnet mask, gateway, dan DNS ke perangkat secara otomatis. Prosesnya disebut <mark>DORA: Discover → Offer → Request → Acknowledge</mark>. Router bisa sekaligus menjadi DHCP client (di WAN) dan DHCP server (di LAN).</p></div>
+<ul>
+<li><div class="k">DHCP client</div>
+<div class="ex"><p>Interface yang meminta IP dari server DHCP lain (modem/ISP). <code>/ip dhcp-client add interface=ether1 disabled=no</code>. Opsi penting: <code>use-peer-dns</code> (pakai DNS dari ISP), <code>add-default-route</code>. Status harus <b>bound</b> jika berhasil.</p></div></li>
+<li><div class="k">DHCP server setup</div>
+<div class="ex"><p>Cara termudah: wizard <code>/ip dhcp-server setup</code> (atau tombol DHCP Setup di WinBox), lalu jawab pertanyaan: interface, network, gateway, pool, DNS, lease time. <mark>Interface harus sudah punya IP</mark> sebelum DHCP server dibuat. Secara manual ada 3 bagian: IP pool, DHCP server, DHCP network.</p>
+<pre>/ip pool add name=pool-lan ranges=192.168.10.10-192.168.10.254
+/ip dhcp-server add name=dhcp-lan interface=ether2 address-pool=pool-lan disabled=no</pre></div></li>
+<li><div class="k">Leases management</div>
+<div class="ex"><span class="term">Istilah: <b>Lease</b> = "sewa" IP ke satu perangkat untuk jangka waktu tertentu (lease time).</span><p>Daftar perangkat yang mendapat IP ada di <code>/ip dhcp-server lease print</code>. Lease <b>dynamic</b> (flag D) dibagi otomatis; tombol <b>Make Static</b> mengubahnya menjadi <mark>static lease: IP selalu sama untuk MAC address itu</mark> (cocok untuk printer/server). Lease juga bisa diblokir atau diberi rate-limit.</p></div></li>
+<li><div class="k">DHCP server network configuration</div>
+<div class="ex"><p>Bagian <code>/ip dhcp-server network</code> menentukan apa yang dikirim ke client: network address, <b>gateway</b>, <b>dns-server</b>, domain, NTP. Jika gateway/DNS salah, client dapat IP tetapi tidak bisa internet.</p>
+<pre>/ip dhcp-server network add address=192.168.10.0/24 gateway=192.168.10.1 dns-server=8.8.8.8</pre></div></li>
+</ul></li>
+
+<li><div class="k">Address Resolution Protocol (ARP)</div>
+<div class="ex"><span class="term">Istilah: <b>ARP</b> = protokol yang mencari MAC address dari sebuah IP di jaringan lokal.</span><p>Sebelum mengirim paket ke 192.168.10.5, perangkat bertanya ke seluruh LAN (broadcast): "Siapa pemilik 192.168.10.5?" Pemiliknya menjawab dengan MAC address-nya. Hasilnya disimpan di ARP table.</p></div>
+<ul>
+<li><div class="k">ARP modes</div>
+<div class="ex"><p>Diatur per interface: <b>enabled</b> (default, normal) · <b>disabled</b> (tidak memakai ARP; hanya entri statis) · <mark><b>reply-only</b>: hanya menjawab perangkat yang terdaftar statis di ARP table</mark>, dipakai untuk mengunci jaringan, sering dipadukan dengan opsi DHCP server <code>add-arp=yes</code> · <b>proxy-arp</b>: router menjawab ARP atas nama perangkat di jaringan lain · <b>local-proxy-arp</b>.</p></div></li>
+<li><div class="k">RouterOS ARP table</div>
+<div class="ex"><p>Lihat di <code>/ip arp print</code>: pasangan IP – MAC – interface. Entri dinamis (D) bisa dijadikan statis (Make Static) atau ditambah manual: <code>/ip arp add address=192.168.10.5 mac-address=AA:BB:CC:DD:EE:FF interface=ether2</code>.</p></div></li>
+</ul></li>
+
+<li class="lab"><div class="k">Module 2 laboratory</div>
+<div class="ex"><p>Praktik: DHCP client di WAN, DHCP server di LAN, melihat &amp; menjadikan lease statis, mengubah DNS/gateway di DHCP network, melihat ARP table, dan mencoba mode reply-only.</p></div></li>
+</ul>
+</section>
+
+<!-- =============================== MODULE 3 =============================== -->
+<section class="module">
+<div class="mhead"><div class="l">Module 3<small>Bridging</small></div><div class="r">Objective</div></div>
+<ul class="o">
+<li><div class="k">Bridging overview</div>
+<div class="ex"><span class="term">Istilah: <b>Bridge</b> = penggabung beberapa interface menjadi satu jaringan Layer 2, seperti switch.</span><p>Perangkat yang tersambung ke port-port dalam satu bridge berada di jaringan (broadcast domain) yang sama dan bisa saling berkomunikasi seolah tersambung ke satu switch. <mark>Bridge bekerja di Layer 2 (MAC address)</mark>.</p></div>
+<ul>
+<li><div class="k">Bridge concepts and settings</div>
+<div class="ex"><span class="term">Istilah: <b>Loop</b> = kabel membentuk lingkaran sehingga paket berputar tanpa henti (broadcast storm); <b>STP/RSTP</b> = Spanning Tree Protocol, pencegah loop.</span><p>Bridge mempelajari MAC address di tiap port (host table) lalu meneruskan frame ke port yang tepat. Setting penting: <mark><b>protocol-mode</b> = none / stp / <b>rstp</b> (default)</mark> untuk mencegah loop, <b>MAC address</b> bridge, ARP mode, dan (di versi baru) hardware offload agar diproses chip switch.</p></div></li>
+<li><div class="k">Creating bridges</div>
+<div class="ex"><p>Bridge adalah interface virtual: <code>/interface bridge add name=bridge-lan</code>. Setelah dibuat, ia muncul di daftar interface dan bisa diberi IP.</p></div></li>
+<li><div class="k">Adding ports to bridges</div>
+<div class="ex"><p>Masukkan port fisik/wireless sebagai anggota: <code>/interface bridge port add bridge=bridge-lan interface=ether2</code> (ulangi untuk ether3, wlan1, dst.). <mark>IP address dan DHCP server dipasang di interface bridge, bukan di port anggotanya.</mark></p>
+<pre>/ip address add address=192.168.10.1/24 interface=bridge-lan</pre></div></li>
+</ul></li>
+
+<li><div class="k">Bridge wireless networks</div>
+<div class="ex"><p>Port wireless (wlan1) bisa dimasukkan ke bridge yang sama dengan port kabel, sehingga perangkat Wi-Fi dan kabel berada dalam satu jaringan dan satu DHCP server.</p></div>
+<ul>
+<li><div class="k">Station bridge</div>
+<div class="ex"><span class="term">Istilah: <b>Station</b> = mode client wireless yang menyambung ke AP.</span><p>Mode station biasa <mark>tidak bisa di-bridge</mark> (standar 802.11 hanya mengizinkan satu MAC dari station). <b>station-bridge</b> = mode khusus MikroTik ke MikroTik (AP harus <code>ap-bridge</code>/<code>bridge</code>) yang memungkinkan bridging penuh di sisi station, misalnya menyambung LAN dua gedung. Alternatif untuk AP merek lain: <code>station-pseudobridge</code> atau <code>station-wds</code>.</p></div></li>
+</ul></li>
+
+<li class="lab"><div class="k">Module 3 laboratory</div>
+<div class="ex"><p>Praktik: membuat bridge, memasukkan port ether dan wlan, memindahkan IP &amp; DHCP server ke bridge, lalu menguji komunikasi antar-client; membuat link wireless station-bridge.</p></div></li>
+</ul>
+</section>
+
+<!-- =============================== MODULE 4 =============================== -->
+<section class="module">
+<div class="mhead"><div class="l">Module 4<small>Routing</small></div><div class="r">Objective</div></div>
+<ul class="o">
+<li><div class="k">Routing overview</div>
+<div class="ex"><span class="term">Istilah: <b>Routing</b> = menentukan jalur paket dari satu jaringan ke jaringan lain (Layer 3, berdasarkan IP).</span><p>Router menyimpan peta jalan di <b>routing table</b> (<code>/ip route print</code>): tujuan (dst-address) dan lewat mana (gateway).</p></div>
+<ul>
+<li><div class="k">Routing concepts</div>
+<div class="ex"><span class="term">Istilah: <b>Gateway/next hop</b> = router berikutnya; <b>distance</b> = prioritas rute (kecil = diutamakan).</span><p>Router memilih rute dengan aturan: <mark>(1) yang paling spesifik (prefix terbesar) menang</mark>; <mark>(2) jika prefix sama, distance terkecil menang</mark>. Distance bawaan: connected = 0, static = 1, DHCP = 1, OSPF = 110. Gateway harus berada di jaringan yang terhubung langsung, kalau tidak rute menjadi tidak aktif. Rute harus ada <b>di kedua arah</b> agar balasan bisa pulang.</p></div></li>
+<li><div class="k">Route flags</div>
+<div class="ex"><p>Huruf di depan setiap rute: <mark><b>X</b> disabled · <b>A</b> active · <b>D</b> dynamic · <b>C</b> connected · <b>S</b> static</mark> · r rip · b bgp · o ospf · m mme · B blackhole · U unreachable · P prohibit. Contoh: <code>DAC</code> = dynamic active connected (muncul otomatis saat IP dipasang); <code>AS</code> = active static; <code>DAd</code> (v7) = dari DHCP.</p></div></li>
+</ul></li>
+
+<li><div class="k">Static routing</div>
+<div class="ex"><span class="term">Istilah: <b>Static route</b> = rute yang ditulis manual oleh admin.</span><p>Cocok untuk jaringan kecil dan sederhana. Kekurangannya: tidak menyesuaikan otomatis jika ada link putus.</p></div>
+<ul>
+<li><div class="k">Creating routes</div>
+<div class="ex"><p><code>/ip route add dst-address=192.168.20.0/24 gateway=10.0.0.2</code> artinya: "untuk ke 192.168.20.0/24, kirim lewat 10.0.0.2". Opsional: <code>distance</code>, <code>comment</code>, <code>check-gateway=ping</code> (cek gateway hidup).</p></div></li>
+<li><div class="k">Setting default route</div>
+<div class="ex"><p>Default route = <mark><code>dst-address=0.0.0.0/0</code></mark>, dipakai untuk semua tujuan yang tidak punya rute lebih spesifik (biasanya internet). <code>/ip route add dst-address=0.0.0.0/0 gateway=192.168.1.1</code>. Dua default route dengan distance berbeda = failover sederhana.</p></div></li>
+<li><div class="k">Managing dynamic routes</div>
+<div class="ex"><span class="term">Istilah: <b>Dynamic route</b> = rute yang muncul otomatis (flag D).</span><p>Sumbernya: IP yang dipasang di interface (connected), DHCP client (<code>add-default-route</code>), koneksi PPP/PPPoE, atau protokol routing (OSPF/BGP). Rute dinamis tidak bisa diedit langsung; ubah dari sumbernya, misal <code>default-route-distance</code> di DHCP client.</p></div></li>
+<li><div class="k">Implementing static routing in a simple network</div>
+<div class="ex"><p>Contoh 2 router: A (LAN 192.168.10.0/24, transit 10.0.0.1/30) dan B (LAN 192.168.20.0/24, transit 10.0.0.2/30).</p>
+<pre># di Router A
+/ip route add dst-address=192.168.20.0/24 gateway=10.0.0.2
+# di Router B
+/ip route add dst-address=192.168.10.0/24 gateway=10.0.0.1</pre>
+<p>Uji dengan ping antar-LAN dan traceroute. Pastikan PC memakai gateway yang benar dan tidak ada NAT/firewall yang memblokir.</p></div></li>
+</ul></li>
+
+<li class="lab"><div class="k">Module 4 laboratory</div>
+<div class="ex"><p>Praktik: membaca routing table &amp; flag, membuat default route, membuat static route antar router peserta, dan menguji dengan ping/traceroute.</p></div></li>
+</ul>
+</section>
+
+<!-- =============================== MODULE 5 =============================== -->
+<section class="module">
+<div class="mhead"><div class="l">Module 5<small>Wireless</small></div><div class="r">Objective</div></div>
+<ul class="o">
+<li><div class="k">802.11a/b/g/n/ac Concepts <span class="star">★ WAJIB</span></div>
+<div class="ex"><span class="term">Istilah: <b>802.11</b> = keluarga standar Wi-Fi dari IEEE.</span><p><b>802.11b</b> 2.4 GHz, 11 Mbps · <b>802.11a</b> 5 GHz, 54 Mbps · <b>802.11g</b> 2.4 GHz, 54 Mbps · <mark><b>802.11n</b> 2.4 &amp; 5 GHz, MIMO, ±150 Mbps per chain</mark> · <mark><b>802.11ac</b> hanya 5 GHz</mark>, hingga Gigabit. Di MikroTik dipilih lewat <code>band</code>, mis. <code>2ghz-b/g/n</code> atau <code>5ghz-a/n/ac</code>.</p></div>
+<ul>
+<li><div class="k">Frequencies (bands, channels) data-rates / chains (tx power, rx sensitivity, country regulations)</div>
+<div class="ex"><span class="term">Istilah: <b>Band</b> = rentang frekuensi; <b>channel</b> = lajur dalam band; <b>chain</b> = jalur radio/antena (MIMO); <b>dBm</b> = satuan kekuatan sinyal.</span>
+<p><b>Band &amp; channel:</b> 2.4 GHz punya channel 1–13 dengan lebar 20 MHz; yang <mark>tidak saling tumpang tindih: 1, 6, 11</mark>. 5 GHz punya lebih banyak channel dan interferensi lebih sedikit, tapi jangkauan lebih pendek.</p>
+<p><b>Data rate:</b> kecepatan modulasi; makin jauh/lemah sinyal makin turun. Kecepatan nyata ±50–60% dari data rate.</p>
+<p><b>Chains:</b> 802.11n/ac memakai beberapa chain (2×2, 3×3) untuk menaikkan kecepatan.</p>
+<p><b>TX power</b> = daya pancar; <b>RX sensitivity</b> = kemampuan menangkap sinyal lemah. Sinyal −50 dBm sangat baik, −70 cukup, −85 buruk. TX power tinggi tidak otomatis bagus: client juga harus bisa membalas.</p>
+<p><b>Country regulations:</b> setting <code>country=indonesia</code> membatasi channel &amp; daya sesuai aturan negara; <code>frequency-mode=regulatory-domain</code>.</p></div></li>
+</ul></li>
+
+<li><div class="k">Setup a simple wireless link</div>
+<div class="ex"><p>Link sederhana = satu AP dan satu station dengan SSID, band, dan pengamanan yang sama.</p></div>
+<ul>
+<li><div class="k">Access Point configuration</div>
+<div class="ex"><span class="term">Istilah: <b>SSID</b> = nama jaringan Wi-Fi.</span><p>Mode <mark><code>ap-bridge</code> (banyak client, butuh lisensi level 4)</mark> atau <code>bridge</code> (hanya 1 client, level 3). Atur SSID, band, channel/frequency, country, dan security profile.</p>
+<pre>/interface wireless set wlan1 mode=ap-bridge ssid=KANTOR band=2ghz-b/g/n \
+    frequency=2437 country=indonesia security-profile=wpa2 disabled=no</pre></div></li>
+<li><div class="k">Station configuration</div>
+<div class="ex"><p>Mode <code>station</code> (atau <code>station-bridge</code> jika perlu bridging), SSID dan security profile sama dengan AP. Tombol <b>Scan</b> menampilkan AP di sekitar untuk dipilih. Status sukses: <i>connected to ess</i>.</p></div></li>
+</ul></li>
+
+<li><div class="k">Wireless Security and Encryption</div>
+<div class="ex"><p>Melindungi Wi-Fi dari pengguna tak berhak dan penyadapan. Penyaringan MAC saja tidak cukup karena MAC bisa dipalsukan; <mark>tetap gunakan enkripsi WPA2</mark>.</p></div>
+<ul>
+<li><div class="k">Access List</div>
+<div class="ex"><p>Dipakai di <mark>AP</mark>: daftar client (berdasarkan MAC) yang <b>diizinkan atau ditolak</b> terhubung, bisa juga dengan syarat kekuatan sinyal, waktu, atau key khusus. Dibaca dari atas ke bawah.</p></div></li>
+<li><div class="k">Connect List</div>
+<div class="ex"><p>Dipakai di <mark>station</mark>: daftar AP (MAC/SSID) yang <b>boleh atau tidak boleh dihubungi</b> station, beserta prioritasnya.</p></div></li>
+<li><div class="k">Default Authenticate</div>
+<div class="ex"><p>Centang (default) = client yang <b>tidak ada</b> di Access List tetap boleh terhubung. <mark>Tidak dicentang = hanya client yang ada di Access List yang bisa terhubung</mark> (whitelist). Untuk station, opsi ini berlaku terhadap Connect List.</p></div></li>
+<li><div class="k">Default Forward</div>
+<div class="ex"><p>Centang (default) = sesama client di AP yang sama bisa saling berkomunikasi. <mark>Tidak dicentang = client isolation</mark>, sesama client tidak bisa saling akses; cocok untuk Wi-Fi tamu/hotspot.</p></div></li>
+<li><div class="k">WPA-PSK, WPA2-PSK</div>
+<div class="ex"><span class="term">Istilah: <b>PSK</b> = Pre-Shared Key, satu kata sandi bersama; <b>AES/CCMP</b> = metode enkripsi kuat; <b>TKIP</b> = metode lama.</span><p>Diatur di <b>Security Profiles</b>: mode <code>dynamic-keys</code>, authentication <mark>WPA2-PSK</mark>, cipher <b>aes-ccm</b>, isi password (minimal 8 karakter). WPA-PSK (TKIP) dan WEP sudah tidak aman.</p>
+<pre>/interface wireless security-profiles add name=wpa2 mode=dynamic-keys \
+    authentication-types=wpa2-psk unicast-ciphers=aes-ccm group-ciphers=aes-ccm \
+    wpa2-pre-shared-key=PasswordWiFiKuat</pre></div></li>
+<li><div class="k">WPS accept, WPS client</div>
+<div class="ex"><span class="term">Istilah: <b>WPS</b> = Wi-Fi Protected Setup, sambung tanpa mengetik password.</span><p><b>WPS accept</b> (di AP): membuka jendela waktu singkat (±2 menit) agar perangkat bisa bergabung dengan menekan tombol WPS. <b>WPS client</b> (di station): station meminta kunci dari AP lewat WPS. Matikan WPS jika tidak diperlukan.</p></div></li>
+</ul></li>
+
+<li><div class="k">Monitoring Tools</div>
+<div class="ex"><p>Alat untuk melihat kondisi Wi-Fi dan sekitarnya.</p></div>
+<ul>
+<li><div class="k">Snooper</div>
+<div class="ex"><p>Memindai seluruh channel di band yang dipilih dan menampilkan jaringan, perangkat, serta tingkat pemakaian tiap frekuensi. Dipakai untuk memilih channel yang paling sepi. <b>Interface wireless berhenti melayani client selama snooper berjalan.</b> Alat sejenis: Scan, Frequency Usage.</p></div></li>
+<li><div class="k">Registration table</div>
+<div class="ex"><p><mark>Daftar client yang sedang terhubung</mark> ke AP (atau AP yang dihubungi station): MAC, sinyal (dBm), signal-to-noise, TX/RX rate, uptime. Tombol <b>Copy to Access List</b> memudahkan whitelist. <code>/interface wireless registration-table print</code>.</p></div></li>
+</ul></li>
+
+<li class="lab"><div class="k">Module 5 laboratory</div>
+<div class="ex"><p>Praktik: membuat AP dan station, security profile WPA2, mengatur access list/connect list, default authenticate/forward, memakai snooper dan registration table.</p></div></li>
+</ul>
+</section>
+
+<!-- =============================== MODULE 6 =============================== -->
+<section class="module">
+<div class="mhead"><div class="l">Module 6<small>Firewall</small></div><div class="r">Objective · bobot soal terbesar</div></div>
+<ul class="o">
+<li><div class="k">Firewall principles <span class="star">★ WAJIB</span></div>
+<div class="ex"><span class="term">Istilah: <b>Firewall</b> = "satpam" yang memeriksa paket dan memutuskan diizinkan atau dibuang; <b>rule</b> = satu aturan (syarat + tindakan).</span><p>Firewall di RouterOS ada di <code>/ip firewall</code>: <b>filter</b> (izinkan/blokir), <b>nat</b> (ubah alamat), <b>mangle</b> (menandai paket), <b>raw</b>, <b>address-list</b>, dan <b>connections</b>.</p></div>
+<ul>
+<li><div class="k">Connection tracking and states</div>
+<div class="ex"><span class="term">Istilah: <b>Connection tracking</b> = router mencatat setiap koneksi yang lewat.</span><p>Berkat pencatatan ini, setiap paket punya status (<i>connection-state</i>): <mark><b>new</b> = paket pertama koneksi baru · <b>established</b> = bagian dari koneksi yang sudah berjalan · <b>related</b> = koneksi terkait koneksi lain (mis. FTP data, ICMP error) · <b>invalid</b> = tidak dikenal/rusak</mark> · <b>untracked</b> = tidak dicatat (diatur di raw). Rule umum: terima established &amp; related, buang invalid. Lihat koneksi: <code>/ip firewall connection print</code>.</p></div></li>
+<li><div class="k">Structure, chains and actions</div>
+<div class="ex"><span class="term">Istilah: <b>Chain</b> = pos pemeriksaan tempat rule dikelompokkan.</span><p>Filter punya 3 chain bawaan: <mark><b>input</b> = paket menuju router itu sendiri · <b>forward</b> = paket yang melewati router · <b>output</b> = paket yang dibuat router</mark>. NAT punya chain <b>srcnat</b> dan <b>dstnat</b>. <mark>Rule dibaca dari atas ke bawah; paket berhenti di rule pertama yang cocok</mark> (untuk action accept/drop/reject). Jika tidak ada yang cocok, paket diizinkan. Urutan rule bisa digeser (drag di WinBox, <code>move</code> di CLI).</p></div></li>
+</ul></li>
+
+<li><div class="k">Firewall Filter in action</div>
+<div class="ex"><p>Penerapan rule filter untuk melindungi router dan pengguna. Saat mengubah firewall dari jarak jauh, aktifkan <b>Safe Mode</b> agar tidak terkunci.</p></div>
+<ul>
+<li><div class="k">Filter actions</div>
+<div class="ex"><p><mark><b>accept</b> = izinkan · <b>drop</b> = buang diam-diam · <b>reject</b> = tolak dan kirim balasan ICMP</mark> · <b>log</b> = catat ke log lalu lanjut ke rule berikutnya · <b>jump</b> = lompat ke chain buatan sendiri · <b>return</b> = kembali ke chain asal · <b>passthrough</b> = hanya menghitung · <b>add-src-to-address-list</b> / <b>add-dst-to-address-list</b> = masukkan IP ke address list · <b>tarpit</b> = menahan koneksi TCP penyerang · <b>fasttrack-connection</b>.</p></div></li>
+<li><div class="k">Protecting your router (input)</div>
+<div class="ex"><p>Chain <b>input</b> melindungi router itu sendiri (WinBox, SSH, DNS, ping ke router). Pola dasar: izinkan established/related, buang invalid, izinkan ICMP dan akses dari LAN/admin, lalu <b>buang sisanya</b> (terutama dari WAN).</p>
+<pre>/ip firewall filter
+add chain=input connection-state=established,related action=accept
+add chain=input connection-state=invalid action=drop
+add chain=input protocol=icmp action=accept
+add chain=input in-interface=ether2 action=accept
+add chain=input action=drop</pre></div></li>
+<li><div class="k">Protection your customers (forward)</div>
+<div class="ex"><p>Chain <b>forward</b> mengatur lalu lintas client yang melewati router: izinkan established/related, buang invalid, blokir akses dari internet ke LAN kecuali yang di-port-forward, blokir situs/IP tertentu, atau batasi client tertentu.</p>
+<pre>add chain=forward connection-state=established,related action=accept
+add chain=forward connection-state=invalid action=drop
+add chain=forward in-interface=ether1 connection-nat-state=!dstnat action=drop</pre></div></li>
+</ul></li>
+
+<li><div class="k">Basic Address-List</div>
+<div class="ex"><span class="term">Istilah: <b>Address list</b> = kelompok IP dengan satu nama.</span><p>Daripada membuat rule untuk setiap IP, kelompokkan IP dalam list (mis. ADMIN, BLOKIR) lalu pakai <code>src-address-list</code>/<code>dst-address-list</code> di rule. List bisa diisi manual atau otomatis (action add-src-to-address-list, dengan timeout).</p>
+<pre>/ip firewall address-list add list=ADMIN address=192.168.10.10
+/ip firewall filter add chain=input src-address-list=ADMIN action=accept</pre></div></li>
+
+<li><div class="k">Source NAT <span class="star">★ WAJIB</span></div>
+<div class="ex"><span class="term">Istilah: <b>Source NAT (src-nat)</b> = mengubah alamat <b>pengirim</b> paket.</span><p>Dipakai di chain <b>srcnat</b>, biasanya agar PC ber-IP privat bisa ke internet memakai IP publik router.</p></div>
+<ul>
+<li><div class="k">Masquerade and src-nat action</div>
+<div class="ex"><p><mark><b>masquerade</b> = otomatis memakai IP interface keluar; cocok untuk IP WAN dinamis</mark> (DHCP/PPPoE). <b>src-nat</b> = IP pengganti ditulis jelas lewat <code>to-addresses</code>; cocok untuk IP WAN statis dan sedikit lebih ringan.</p>
+<pre>/ip firewall nat add chain=srcnat out-interface=ether1 action=masquerade
+/ip firewall nat add chain=srcnat out-interface=ether1 action=src-nat to-addresses=203.0.113.10</pre></div></li>
+</ul></li>
+
+<li><div class="k">Destination NAT</div>
+<div class="ex"><span class="term">Istilah: <b>Destination NAT (dst-nat)</b> = mengubah alamat/port <b>tujuan</b> paket; <b>port forwarding</b> = membuka akses dari internet ke server di LAN.</span><p>Dipakai di chain <b>dstnat</b>, diproses saat paket masuk.</p></div>
+<ul>
+<li><div class="k">dst-nat and redirect actions</div>
+<div class="ex"><p><mark><b>dst-nat</b> = teruskan ke IP/port lain (port forwarding)</mark>, contoh akses IP WAN port 8080 diteruskan ke server 192.168.10.20 port 80. <b>redirect</b> = arahkan ke layanan di <b>router itu sendiri</b>, contoh memaksa semua query DNS ke DNS router, atau ke web proxy.</p>
+<pre>/ip firewall nat add chain=dstnat in-interface=ether1 protocol=tcp dst-port=8080 \
+    action=dst-nat to-addresses=192.168.10.20 to-ports=80
+/ip firewall nat add chain=dstnat protocol=udp dst-port=53 action=redirect to-ports=53</pre></div></li>
+</ul></li>
+
+<li><div class="k">FastTrack</div>
+<div class="ex"><span class="term">Istilah: <b>FastTrack</b> = "jalur tol" untuk koneksi yang sudah established.</span><p>Paket dari koneksi yang di-FastTrack melewati sebagian besar proses firewall sehingga <b>CPU jauh lebih ringan</b>. Dibuat dengan rule <code>chain=forward connection-state=established,related action=fasttrack-connection</code> (diikuti rule accept). Kekurangannya: <mark>koneksi FastTrack melewati Simple Queue, mangle, dan IPsec</mark>, sehingga pembatasan bandwidth bisa tidak berlaku.</p></div></li>
+
+<li class="lab"><div class="k">Module 6 laboratory</div>
+<div class="ex"><p>Praktik: melindungi router (input), melindungi client (forward), memakai address list, membuat masquerade, port forwarding dengan dst-nat, redirect DNS, dan mengaktifkan FastTrack.</p></div></li>
+</ul>
+</section>
+
+<!-- =============================== MODULE 7 =============================== -->
+<section class="module">
+<div class="mhead"><div class="l">Module 7<small>QoS</small></div><div class="r">Objective</div></div>
+<ul class="o">
+<li><div class="k">Simple Queue <span class="star">★ WAJIB</span></div>
+<div class="ex"><span class="term">Istilah: <b>QoS</b> = Quality of Service, pengaturan bandwidth; <b>queue</b> = antrean untuk membatasi kecepatan.</span><p>Simple Queue adalah cara termudah membatasi kecepatan per IP/subnet (<code>/queue simple</code>). <mark>Dibaca dari atas ke bawah</mark>; paket masuk ke queue pertama yang cocok.</p>
+<pre>/queue simple add name=CLIENT-10 target=192.168.10.10/32 max-limit=2M/10M</pre></div>
+<ul>
+<li><div class="k">Target</div>
+<div class="ex"><p>IP, subnet, atau interface yang dibatasi, contoh <code>192.168.10.10/32</code> (satu PC) atau <code>192.168.10.0/24</code> (satu LAN). Arah upload/download selalu dilihat <b>dari sisi target</b>.</p></div></li>
+<li><div class="k">Destinations</div>
+<div class="ex"><p>Opsional: membatasi hanya trafik target menuju tujuan tertentu (mis. hanya ke internet via interface WAN, atau ke server tertentu). Kosong = semua tujuan.</p></div></li>
+<li><div class="k">Max-limit and limit-at</div>
+<div class="ex"><p><mark><b>max-limit</b> = batas atas kecepatan</mark>; <mark><b>limit-at</b> = kecepatan minimum yang dijamin</mark> (CIR). Format <mark><code>upload/download</code></mark>: <code>max-limit=2M/10M</code> berarti upload 2 Mbps, download 10 Mbps. Total limit-at semua client sebaiknya tidak melebihi kapasitas link.</p></div></li>
+<li><div class="k">Bursting</div>
+<div class="ex"><span class="term">Istilah: <b>Burst</b> = izin kecepatan sesaat di atas max-limit.</span><p>Parameter: <b>burst-limit</b> (kecepatan saat burst, &gt; max-limit), <b>burst-threshold</b> (batas rata-rata pemakaian, di antara limit-at dan max-limit), <b>burst-time</b> (periode menghitung rata-rata, detik). Selama rata-rata pemakaian di bawah threshold, client boleh lari sampai burst-limit. Hasilnya: membuka web terasa cepat, download panjang tetap dibatasi.</p>
+<pre>/queue simple add target=192.168.10.11/32 max-limit=2M/10M \
+    burst-limit=4M/15M burst-threshold=1M/6M burst-time=8s/8s</pre></div></li>
+</ul></li>
+
+<li><div class="k">One Simple queue for the whole network (PCQ)</div>
+<div class="ex"><span class="term">Istilah: <b>PCQ</b> = Per Connection Queue, membagi bandwidth rata ke banyak user secara otomatis; <b>classifier</b> = dasar pembeda user.</span><p>Satu Simple Queue untuk seluruh LAN dengan queue type PCQ: setiap IP otomatis mendapat bagian yang sama, dan bagian user yang tidak aktif dibagi ke yang aktif. <mark>Classifier: download = <code>dst-address</code>, upload = <code>src-address</code></mark>. RouterOS menyediakan <code>pcq-download-default</code> dan <code>pcq-upload-default</code>.</p>
+<pre>/queue simple add name=LAN target=192.168.10.0/24 max-limit=20M/50M \
+    queue=pcq-upload-default/pcq-download-default</pre></div>
+<ul>
+<li><div class="k">pcq-rate configuration</div>
+<div class="ex"><p>Batas kecepatan per user (per sub-stream). <code>pcq-rate=0</code> (default) = tanpa batas tetap, bandwidth dibagi rata sesuai jumlah user aktif. <code>pcq-rate=2M</code> = setiap user maksimal 2 Mbps.</p></div></li>
+<li><div class="k">pcq-limit configuration</div>
+<div class="ex"><p>Panjang antrean (jumlah paket) per user. Terlalu kecil = paket banyak dibuang; terlalu besar = memori terpakai dan latency naik. Ada juga <b>pcq-total-limit</b> untuk total semua user.</p></div></li>
+</ul></li>
+
+<li class="lab"><div class="k">Module 7 laboratory</div>
+<div class="ex"><p>Praktik: membatasi satu client dengan Simple Queue, mencoba limit-at dan burst, lalu membuat PCQ untuk seluruh LAN dan mengujinya dengan Torch/bandwidth test.</p></div></li>
+</ul>
+</section>
+
+<!-- =============================== MODULE 8 =============================== -->
+<section class="module">
+<div class="mhead"><div class="l">Module 8<small>Tunnels</small></div><div class="r">Objective</div></div>
+<ul class="o">
+<li><div class="k">PPP settings</div>
+<div class="ex"><span class="term">Istilah: <b>PPP</b> = Point-to-Point Protocol, koneksi satu lawan satu dengan login; <b>tunnel</b> = paket dibungkus dalam paket lain agar bisa lewat jaringan perantara.</span><p>PPP menjadi dasar PPPoE, PPTP, SSTP, L2TP, dan OVPN. Pengaturannya ada di menu <code>/ppp</code>.</p></div>
+<ul>
+<li><div class="k">PPP profile</div>
+<div class="ex"><p>Template setting yang dipakai bersama oleh banyak user: <b>local-address</b>, <b>remote-address</b>, DNS, <b>rate-limit</b> (batas kecepatan), only-one (satu login per user), bridge. Profile bawaan: <code>default</code> dan <code>default-encryption</code>.</p>
+<pre>/ppp profile add name=profile-kantor local-address=192.168.20.1 remote-address=pool-pppoe dns-server=8.8.8.8</pre></div></li>
+<li><div class="k">PPP secret</div>
+<div class="ex"><p><mark>Akun user PPP</mark>: name (username), password, <b>service</b> (any/pppoe/pptp/sstp/l2tp), profile, dan opsional local/remote-address khusus untuk user itu.</p>
+<pre>/ppp secret add name=user01 password=Rahasia123 service=pppoe profile=profile-kantor</pre></div></li>
+<li><div class="k">PPP status</div>
+<div class="ex"><p>Sesi yang sedang tersambung terlihat di <b>PPP › Active Connections</b> (<code>/ppp active print</code>): user, service, IP, uptime. Setiap sesi juga muncul sebagai interface dinamis dan rute dinamis.</p></div></li>
+</ul></li>
+
+<li><div class="k">IP pool</div>
+<div class="ex"><span class="term">Istilah: <b>IP pool</b> = daftar rentang IP yang boleh dibagikan.</span><p>Dipakai oleh DHCP server, PPP, hotspot, dan VPN untuk memberi IP ke client.</p></div>
+<ul>
+<li><div class="k">Creating pool</div>
+<div class="ex"><p><code>/ip pool add name=pool-pppoe ranges=192.168.20.10-192.168.20.100</code></p></div></li>
+<li><div class="k">Managing ranges</div>
+<div class="ex"><p>Satu pool bisa berisi beberapa rentang (pisahkan dengan koma). Opsi <b>next-pool</b> = pool cadangan jika pool habis. IP yang sedang dipakai terlihat di <code>/ip pool used print</code>.</p></div></li>
+<li><div class="k">Assigning to a service</div>
+<div class="ex"><p>Pool dipasang ke layanan: <code>remote-address</code> di PPP profile, <code>address-pool</code> di DHCP server, atau pool di hotspot server.</p></div></li>
+</ul></li>
+
+<li><div class="k">Secure local network</div>
+<div class="ex"><span class="term">Istilah: <b>PPPoE</b> = <mark>Point-to-Point Protocol over Ethernet</mark>.</span><p>PPPoE mewajibkan login sebelum client bisa memakai jaringan, sehingga LAN lebih aman dan setiap user bisa dicatat dan dibatasi. Banyak dipakai ISP/RT-RW net. PPPoE bekerja di Layer 2: client dan server harus satu segmen Ethernet. MTU umum 1480.</p></div>
+<ul>
+<li><div class="k">PPPoE service-name</div>
+<div class="ex"><p>Nama layanan pada PPPoE server. Client bisa memilih server tertentu berdasarkan service-name jika ada beberapa server di satu jaringan. Kosong = menerima server mana saja.</p></div></li>
+<li><div class="k">PPPoE client</div>
+<div class="ex"><p>Router/PC yang login ke PPPoE server (mis. router kantor ke ISP). Setelah tersambung, mendapat IP dan bisa menambah default route otomatis.</p>
+<pre>/interface pppoe-client add name=pppoe-out1 interface=ether1 user=user01 \
+    password=Rahasia123 add-default-route=yes use-peer-dns=yes disabled=no</pre></div></li>
+<li><div class="k">PPPoE server</div>
+<div class="ex"><p>Router yang menerima login. Rantainya: <mark>IP Pool → PPP Profile → PPP Secret → PPPoE Server</mark> di interface LAN. Interface tersebut sebaiknya tidak diberi DHCP server agar client wajib login.</p>
+<pre>/interface pppoe-server server add service-name=kantor interface=ether3 \
+    default-profile=profile-kantor one-session-per-host=yes disabled=no</pre></div></li>
+</ul></li>
+
+<li><div class="k">Point-to-point addresses</div>
+<div class="ex"><p>Pada link PPP, setiap ujung punya IP: <b>local-address</b> = IP di sisi router/server, <b>remote-address</b> = IP di sisi client. Alamat ini bersifat /32 point-to-point, sehingga local-address boleh sama untuk semua client, dan router otomatis membuat rute dinamis ke setiap remote-address.</p></div></li>
+
+<li><div class="k">Secure remote networks communication</div>
+<div class="ex"><span class="term">Istilah: <b>VPN</b> = Virtual Private Network, tunnel aman lewat internet seolah kabel pribadi antar lokasi.</span><p>Dipakai untuk menghubungkan kantor cabang atau karyawan yang bekerja dari luar ke jaringan kantor.</p></div>
+<ul>
+<li><div class="k">PPTP client and PPTP server (Quick Set)</div>
+<div class="ex"><p>PPTP memakai TCP 1723 + protokol GRE. Paling mudah: centang <b>VPN Access</b> di Quick Set, router otomatis menjadi PPTP (dan L2TP) server dengan user <code>vpn</code>. Client: <code>/interface pptp-client add connect-to=IP-SERVER user=... password=...</code>. <mark>PPTP mudah tetapi enkripsinya lemah</mark>; jangan dipakai untuk data penting.</p></div></li>
+<li><div class="k">SSTP client</div>
+<div class="ex"><p>SSTP membungkus PPP di dalam <mark>TLS lewat TCP port 443</mark>, sehingga aman dan bisa menembus hampir semua firewall (terlihat seperti HTTPS). Server membutuhkan sertifikat. Client: <code>/interface sstp-client add connect-to=IP-SERVER user=... password=...</code>. VPN modern lain: L2TP/IPsec dan WireGuard (RouterOS v7).</p></div></li>
+</ul></li>
+
+<li class="lab"><div class="k">Module 8 laboratory</div>
+<div class="ex"><p>Praktik: membuat IP pool, PPP profile &amp; secret, PPPoE server dan client antar router peserta, melihat active connections, serta VPN PPTP via Quick Set dan SSTP client.</p></div></li>
+</ul>
+</section>
+
+<!-- =============================== MODULE 9 =============================== -->
+<section class="module">
+<div class="mhead"><div class="l">Module 9<small>Misc</small></div><div class="r">Objective</div></div>
+<ul class="o">
+<li><div class="k">RouterOS tools</div>
+<div class="ex"><p>Alat bawaan di menu <b>Tools</b> untuk uji koneksi dan otomatisasi sederhana.</p></div>
+<ul>
+<li><div class="k">E-mail</div>
+<div class="ex"><p>Router bisa mengirim email lewat server SMTP (<code>/tool e-mail</code>), misalnya mengirim file backup atau notifikasi dari script/Netwatch. Isi server, port, user, dan password SMTP.</p>
+<pre>/tool e-mail send to=admin@contoh.com subject="Backup" file=kantor.backup</pre></div></li>
+<li><div class="k">Netwatch</div>
+<div class="ex"><p>Memantau host dengan ping berkala dan <mark>menjalankan script saat host up atau down</mark>, misalnya kirim email atau pindah gateway. <code>/tool netwatch add host=8.8.8.8 interval=30s down-script="..."</code>.</p></div></li>
+<li><div class="k">Ping</div>
+<div class="ex"><span class="term">Istilah: <b>ICMP</b> = protokol untuk pesan kontrol & ping; <b>latency</b> = waktu pergi-pulang (ms); <b>packet loss</b> = paket hilang.</span><p>Menguji apakah host bisa dijangkau dan berapa latency-nya. <code>/ping 8.8.8.8 count=5</code>; bisa memilih <code>src-address</code>/<code>interface</code>. Timeout belum tentu host mati: ICMP bisa diblokir firewall.</p></div></li>
+<li><div class="k">Traceroute</div>
+<div class="ex"><span class="term">Istilah: <b>Hop</b> = satu router yang dilewati paket.</span><p>Menampilkan <mark>daftar hop menuju tujuan</mark> beserta latency tiap hop, untuk menemukan di titik mana koneksi lambat atau putus. <code>/tool traceroute 8.8.8.8</code>.</p></div></li>
+<li><div class="k">Profiler (CPU load)</div>
+<div class="ex"><p>Menampilkan <b>proses apa yang memakan CPU</b> (firewall, wireless, management, dns, dll.). <code>/tool profile</code>. Beban CPU total: <code>/system resource print</code>.</p></div></li>
+</ul></li>
+
+<li><div class="k">Monitoring</div>
+<div class="ex"><p>Memantau trafik dan kesehatan router, baik langsung maupun dalam jangka panjang.</p></div>
+<ul>
+<li><div class="k">Interface traffic monitor</div>
+<div class="ex"><span class="term">Istilah: <b>RX</b> = data diterima interface; <b>TX</b> = data dikirim interface.</span><p>Menampilkan total kecepatan RX/TX satu interface secara langsung. <code>/interface monitor-traffic ether1</code>, atau tab Traffic pada jendela interface di WinBox.</p></div></li>
+<li><div class="k">Torch</div>
+<div class="ex"><p>Menampilkan trafik <b>real-time</b> di satu interface, <mark>dirinci per IP sumber/tujuan, protokol, dan port</mark>. Jawaban untuk pertanyaan "siapa yang sedang menyedot bandwidth?". <code>/tool torch interface=ether2 src-address=0.0.0.0/0</code>.</p></div></li>
+<li><div class="k">Graphs</div>
+<div class="ex"><p>Grafik riwayat trafik interface, queue, dan resource (CPU, memori, disk) per hari/minggu/bulan/tahun. Diaktifkan di <code>/tool graphing</code>, lalu dilihat lewat browser: <code>http://IP-router/graphs</code>.</p></div></li>
+<li><div class="k">SNMP</div>
+<div class="ex"><span class="term">Istilah: <b>SNMP</b> = Simple Network Management Protocol, cara aplikasi monitoring membaca data dari perangkat (UDP 161).</span><p>Aktifkan di <code>/snmp</code> agar router bisa dipantau oleh Cacti, Zabbix, PRTG, atau The Dude. Atur community dan batasi alamat yang boleh membaca; SNMPv3 lebih aman (ada autentikasi dan enkripsi).</p></div></li>
+<li><div class="k">The Dude</div>
+<div class="ex"><p>Aplikasi monitoring jaringan gratis dari MikroTik: otomatis menemukan perangkat, menggambar peta topologi, memantau layanan (ping, HTTP, dll.), dan memberi notifikasi saat perangkat down. Terdiri dari server (paket di RouterOS) dan client (aplikasi di PC).</p></div></li>
+</ul></li>
+
+<li><div class="k">Contacting support@mikrotik.com</div>
+<div class="ex"><p>Agar bantuan support cepat dan tepat, siapkan data diagnosa, log, konfigurasi yang rapi, dan diagram jaringan.</p></div>
+<ul>
+<li><div class="k">supout.rif, autosupout.rif and viewer</div>
+<div class="ex"><span class="term">Istilah: <b>supout.rif</b> = file diagnosa lengkap kondisi router.</span><p><mark>supout.rif dibuat manual</mark> (<code>/system sup-output</code>, atau tombol <b>Make Supout.rif</b>) lalu dilampirkan ke email support. <b>autosupout.rif</b> dibuat otomatis oleh router saat crash/watchdog reboot. Isinya bisa dibaca sendiri dengan <b>Supout.rif Viewer</b> di akun mikrotik.com. File ini memuat konfigurasi, jadi jaga kerahasiaannya.</p></div></li>
+<li><div class="k">System logs, enabling debug logs</div>
+<div class="ex"><p>Log mencatat kejadian: login, link up/down, DHCP, error. Lihat di <code>/log print</code>. Aturan pencatatan ada di <code>/system logging</code>: pilih topik (mis. wireless, dhcp, firewall) dan tujuan (memory, disk, remote syslog). <b>Debug log</b> memberi detail lebih banyak (<code>/system logging add topics=pppoe,debug</code>); nyalakan hanya saat mencari masalah karena log jadi sangat banyak.</p></div></li>
+<li><div class="k">Readable configuration (item comments and names)</div>
+<div class="ex"><p>Beri <b>nama</b> yang jelas pada interface (mis. <code>ether1-WAN</code>), queue, dan address list, serta <b>comment</b> pada rule firewall, route, dan lease. Konfigurasi jadi mudah dipahami oleh rekan kerja dan support. <code>/interface set ether1 name=ether1-WAN</code>; <code>comment="blokir tamu"</code>.</p></div></li>
+<li><div class="k">Network diagrams</div>
+<div class="ex"><p>Gambar topologi: perangkat, interface, IP/subnet, gateway, link WAN, dan server. Lampirkan saat menghubungi support dan simpan sebagai dokumentasi. Bisa dibuat dengan draw.io, Visio, atau peta The Dude.</p></div></li>
+</ul></li>
+
+<li class="lab"><div class="k">Module 9 laboratory</div>
+<div class="ex"><p>Praktik: ping, traceroute, Netwatch dengan script, mengirim email, memakai Torch dan Profiler, mengaktifkan Graphs dan SNMP, membuat supout.rif, membaca log, serta menamai dan memberi comment pada konfigurasi.</p></div></li>
+</ul>
+
+<div class="foot">Struktur dan teks poin berbahasa Inggris mengikuti "MTCNA Training outline" resmi MikroTik (last edited 22 Jan 2016). Penjelasan Bahasa Indonesia disusun dari Panduan Lengkap MTCNA dan dokumentasi RouterOS; beberapa menu bisa berbeda di RouterOS v7. Bahan belajar mandiri, bukan materi resmi MikroTik.</div>
+</section>
+
+</body>
+</html>

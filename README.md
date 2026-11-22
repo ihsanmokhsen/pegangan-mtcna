@@ -4,6 +4,7 @@ Rangkuman 9 modul silabus MikroTik Certified Network Associate (MTCNA) dalam bah
 
 - `index.html`: versi web interaktif (istilah baru, ilustrasi, perintah RouterOS, jebakan ujian, kalkulator subnet, 36 soal latihan).
 - `Pegangan_MTCNA.pdf`: versi PDF ukuran A5 untuk dibaca offline, lengkap dengan kunci jawaban kuis.
+- `Silabus_MTCNA_Penjelasan.pdf`: urutan dan teks poin persis seperti silabus resmi MTCNA (138 poin), dengan penjelasan Bahasa Indonesia langsung di bawah setiap poin. Versi web: `silabus.html`.
 
 Tanda di halaman: **stabilo kuning** = paling sering keluar di ujian, **★ Wajib** = bagian wajib hafal.
 
